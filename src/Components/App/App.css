@@ -3,7 +3,7 @@
   height: 100vh;
 }
 
-  #title {
+#title {
     font-size: 4rem;
     font-family: "Press Start 2P", system-ui;
     color: #ffffff;
@@ -11,5 +11,56 @@
     justify-content: center;
     align-items: center;
     display: flex;
-    padding: 1.5em;
+    padding-top: 1em;
+    padding-bottom: .5em;
+}
+
+#description {
+    font-size: 1rem;
+    font-family: "Poppins", system-ui;
+    color: #ffffff;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.SearchBar {
+    display: flex;
+    margin-top: 2em;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.SearchResults {
+    display: flex;
+    flex-direction: column;
+    align-items: left-align;
+    justify-content: center;
+}
+
+.Playlist {
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+    align-content: right;
+    align-self: right;
+    align-items: right;
+    justify-content: center;
+}
+
+.Tracklist {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.Track {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
