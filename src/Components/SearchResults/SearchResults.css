@@ -1,0 +1,11 @@
+#search-results-title {
+    font-size: 1rem;
+    font-family: "Press Start 2P", system-ui;
+    color: #ffffff;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding-top: 1em;
+    padding-bottom: .5em;
+}

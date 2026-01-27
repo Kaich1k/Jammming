@@ -8,17 +8,20 @@ import Track from '../Track/Track.jsx'
 
 function App() {
 
+  const [searchResults, setSearchResults] = useState('');
+  const [playlist, setPlaylist] = useState([]);
+
   return (
     <div className="App">
       <h1 id="title">Jammming</h1>
       <p id="description">Search for songs and add them to your playlist!</p>
-      <SearchBar className="SearchBar"/>
+      <SearchBar className="SearchBar" text={searchResults} setText={setSearchResults}/>
       <div className="BodyContentContainer">
-        <SearchResults className="SearchResults"/>
+        <SearchResults className="SearchResults" text={searchResults}/>
         <Playlist className="Playlist"/>
+      </div>
         <Tracklist className="Tracklist"/>
         <Track className="Track"/>
-      </div>
     </div>
   )
 }

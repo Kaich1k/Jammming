@@ -34,21 +34,40 @@
     flex-wrap: wrap;
 }
 
+.BodyContentContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 2em;
+    padding: 2em;
+    width: 100%;
+    box-sizing: border-box;
+}
+
 .SearchResults {
     display: flex;
     flex-direction: column;
-    align-items: left-align;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex: 1;
+    background-color: #1d7ec3;
+    border-radius: 10px;
+    padding: 1em;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, .5);
+    border: 1px solid #fff;
 }
 
 .Playlist {
     display: flex;
     flex-direction: column;
-    align-items: right;
-    align-content: right;
-    align-self: right;
-    align-items: right;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex: 1;
+    background-color: #1d7ec3;
+    border-radius: 10px;
+    padding: 1em;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+    border: 1px solid #fff;
 }
 
 .Tracklist {

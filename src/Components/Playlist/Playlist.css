@@ -1,0 +1,52 @@
+#playlist-title {
+    font-size: 1rem;
+    font-family: "Press Start 2P", system-ui;
+    color: #ffffff;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding-top: 1em;
+    padding-bottom: .5em;
+}
+
+.PlaylistNameContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+}
+
+#playlist-name {
+    width: 100%;
+    height: 3em;
+    border-radius: 3px;
+    border: 1px solid #fff;
+    padding: 0 20px;
+    font-size: 1rem;
+    font-family: "Space Mono", monospace;
+    color: #ffffff;
+    background-color: #000000;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+}
+
+#playlist-save {
+    background-color: #000000;
+    height: 3em;
+    width: 10em;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    border-radius: 30px;
+    border: 1px solid #fff;
+    padding: 0 20px;
+    font-size: 14px;
+    font-family: "Space Mono", monospace;
+    color: #ffffff;
+}
+
+#playlist-save:hover {
+    background-color: #01233b;
+    cursor: pointer;
+}
