@@ -20,8 +20,6 @@ function App() {
         <SearchResults className="SearchResults" text={searchResults}/>
         <Playlist className="Playlist"/>
       </div>
-        <Tracklist className="Tracklist"/>
-        <Track className="Track"/>
     </div>
   )
 }
