@@ -9,3 +9,8 @@
     padding-top: 1em;
     padding-bottom: .5em;
 }
+
+.SearchResultsList {
+    width: 100%;
+    min-width: 0;
+}

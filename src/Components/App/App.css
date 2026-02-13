@@ -25,6 +25,28 @@
     display: flex;
 }
 
+.LoginButton,
+.LogoutButton {
+    font-family: "Poppins", system-ui;
+    padding: 0.6em 1.2em;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: 0.5em;
+}
+
+.LoginButton {
+    background-color: #1db954;
+    color: #fff;
+}
+
+.LogoutButton {
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+}
+
 .SearchBar {
     display: flex;
     margin-top: 2em;
@@ -73,8 +95,73 @@
 .Tracklist {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.SearchResultsItem,
+.TracklistItem {
+    display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    gap: 1em;
+    padding: 0.5em 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    width: 100%;
+}
+
+.SearchResultsItem .TrackInfo,
+.TracklistItem .TrackInfo {
+    flex: 1;
+    min-width: 0;
+}
+
+.SearchResultsItem h3,
+.TracklistItem h3 {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #fff;
+}
+
+.SearchResultsItem p,
+.TracklistItem p {
+    margin: 0.2em 0 0;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.AddTrackButton,
+.RemoveTrackButton {
+    flex-shrink: 0;
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    border: none;
+    font-size: 1.2rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.AddTrackButton {
+    background: #1db954;
+    color: #fff;
+}
+
+.AddTrackButton:disabled {
+    background: #333;
+    cursor: default;
+}
+
+.RemoveTrackButton {
+    background: #e74c3c;
+    color: #fff;
+}
+
+.TracklistEmpty {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    margin: 1em 0;
 }
 
 .Track {

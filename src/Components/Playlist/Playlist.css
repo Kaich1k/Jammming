@@ -51,7 +51,12 @@
     color: #ffffff;
 }
 
-#playlist-save:hover {
+#playlist-save:hover:not(:disabled) {
     background-color: #01233b;
     cursor: pointer;
+}
+
+#playlist-save:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
 }

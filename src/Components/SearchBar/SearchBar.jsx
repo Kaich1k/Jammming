@@ -1,21 +1,29 @@
-import React, { useState, useEffect } from 'react'
-import App from '../App/App.jsx';
+import React from 'react'
 import './SearchBar.css'
 
-function SearchBar({text, setText}) {
-
+function SearchBar({ searchQuery, setSearchQuery, onSearch }) {
   const handleChange = (e) => {
-    setText(e.target.value);
+    setSearchQuery(e.target.value)
   }
 
-  const handleSearch = () => {  
-    setText('');
+  const handleSearch = (e) => {
+    e.preventDefault()
+    onSearch()
   }
 
   return (
     <div className="SearchBar">
-      <input className="SearchBarInput" type="text" placeholder="Enter A Song, Album, or Artist" onChange={handleChange} value={text}/>
-      <button className="SearchButton" onClick={handleSearch}>SEARCH</button>
+      <input
+        className="SearchBarInput"
+        type="text"
+        placeholder="Enter a song, album, or artist"
+        onChange={handleChange}
+        value={searchQuery}
+        onKeyDown={(e) => e.key === 'Enter' && handleSearch(e)}
+      />
+      <button type="button" className="SearchButton" onClick={handleSearch}>
+        SEARCH
+      </button>
     </div>
   )
 }
