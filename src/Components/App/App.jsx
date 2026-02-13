@@ -96,9 +96,11 @@ function App() {
           </div>
         </>
       ) : (
-        <button type="button" onClick={Spotify.login} className="LoginButton">
-          Log in with Spotify
-        </button>
+        <div className="LoginScreen">
+          <button type="button" onClick={Spotify.login} className="LoginButton">
+            Log in with Spotify
+          </button>
+        </div>
       )}
     </div>
   )
