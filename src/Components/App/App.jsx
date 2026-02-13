@@ -3,7 +3,7 @@ import './App.css'
 import SearchBar from '../SearchBar/SearchBar.jsx'
 import SearchResults from '../SearchResults/SearchResults.jsx'
 import Playlist from '../Playlist/Playlist.jsx'
-import * as Spotify from '../../spotify'
+import * as Spotify from '../../spotify.js'
 
 function App() {
   const [token, setToken] = useState(Spotify.getStoredToken())

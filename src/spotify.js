@@ -35,20 +35,26 @@ async function sha256Base64Url(plain) {
 export function login() {
   if (!CLIENT_ID) {
     console.error('Missing VITE_SPOTIFY_CLIENT_ID in .env')
+    alert('Spotify Client ID is missing. Add VITE_SPOTIFY_CLIENT_ID to your .env file in the project root, then restart the dev server (npm run dev).')
     return
   }
   const codeVerifier = generateRandomString(64)
   sessionStorage.setItem(CODE_VERIFIER_KEY, codeVerifier)
-  sha256Base64Url(codeVerifier).then((codeChallenge) => {
-    const url = new URL('https://accounts.spotify.com/authorize')
-    url.searchParams.set('client_id', CLIENT_ID)
-    url.searchParams.set('response_type', 'code')
-    url.searchParams.set('redirect_uri', REDIRECT_URI)
-    url.searchParams.set('scope', SCOPES)
-    url.searchParams.set('code_challenge_method', 'S256')
-    url.searchParams.set('code_challenge', codeChallenge)
-    window.location.href = url.toString()
-  })
+  sha256Base64Url(codeVerifier)
+    .then((codeChallenge) => {
+      const url = new URL('https://accounts.spotify.com/authorize')
+      url.searchParams.set('client_id', CLIENT_ID)
+      url.searchParams.set('response_type', 'code')
+      url.searchParams.set('redirect_uri', REDIRECT_URI)
+      url.searchParams.set('scope', SCOPES)
+      url.searchParams.set('code_challenge_method', 'S256')
+      url.searchParams.set('code_challenge', codeChallenge)
+      window.location.href = url.toString()
+    })
+    .catch((err) => {
+      console.error('Spotify login error', err)
+      alert('Login failed: ' + (err.message || 'Could not start redirect. Try again.'))
+    })
 }
 
 /** Exchange ?code=... for access token. Call on the page that loads after redirect. */
