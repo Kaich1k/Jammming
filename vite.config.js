@@ -10,4 +10,7 @@ export default defineConfig({
   plugins: [react()],
   base: '/Jammming/',  // required for GitHub Pages: https://kaich1k.github.io/Jammming/
   envDir: __dirname,   // load .env from folder containing vite.config.js (project root)
+  server: {
+    host: '127.0.0.1',  // use http://127.0.0.1:5173/ instead of localhost
+  },
 })

@@ -11,9 +11,12 @@ function SearchResults({ tracks, onAdd, playlist }) {
         {tracks.map((track) => (
           <div key={track.id} className="SearchResultsItem">
             <div className="TrackInfo">
-              <h3>{track.name}</h3>
-              <p>{track.artists?.map((a) => a.name).join(', ')}</p>
-              <p>{track.album?.name}</p>
+              <img src={track.album?.images[0]?.url} alt={track.name} style={{ width: '80px', height: '80px' }} />
+              <div className="TrackInfoText">
+                <h3>{track.name}</h3>
+                <p>{track.artists?.map((a) => a.name).join(', ')}</p>
+                <p>{track.album?.name}</p>
+                </div>
             </div>
             <button
               type="button"
@@ -21,7 +24,7 @@ function SearchResults({ tracks, onAdd, playlist }) {
               onClick={() => onAdd(track)}
               disabled={inPlaylist(track.id)}
             >
-              {inPlaylist(track.id) ? 'Added' : '+'}
+              {inPlaylist(track.id) ? '' : '+'}
             </button>
           </div>
         ))}
