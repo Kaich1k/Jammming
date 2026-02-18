@@ -46,6 +46,39 @@
     font-size: 3rem;
 }
 
+.LoginScreen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+}
+
+.LoginScreen p {
+    font-size: 1rem;
+    font-family: "Press Start 2P", system-ui;
+    color: #ffffff;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.LoginScreen .Note {
+    font-size: 0.5rem;
+    font-family: "Press Start 2P", system-ui;
+    color: #ffffff;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.LoginVideo {
+    width: 700px;
+    height: 430px;
+}
+
 .LoginButton {
     background-color: #1db954;
     color: #fff;
@@ -181,4 +214,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+@media only screen and (max-width: 600px) {
+    .LoginVideo {
+        width: 100%;
+        height: 41%;
+    }
 }

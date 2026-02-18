@@ -4,6 +4,7 @@ import SearchBar from '../SearchBar/SearchBar.jsx'
 import SearchResults from '../SearchResults/SearchResults.jsx'
 import Playlist from '../Playlist/Playlist.jsx'
 import * as Spotify from '../../spotify.js'
+import jammmingVideo from '../../assets/Jammming.mov'
 
 function App() {
   const [token, setToken] = useState(Spotify.getStoredToken())
@@ -137,12 +138,14 @@ function App() {
         </>
       ) : (
         <div className="LoginScreen">
+          <p>Tutorial Video</p>
+          <p className="Note">(Spotify API allows selected emails to save playlists)</p>
+          <video src={jammmingVideo} controls muted playsInline className="LoginVideo" />
           <button type="button" onClick={Spotify.login} className="LoginButton">
             Log in with Spotify
           </button>
         </div>
       )}
-      {console.log(token)}
     </div>
   )
 }
