@@ -157,11 +157,11 @@ export async function getMe(token) {
 
 /** Create playlist. Returns { id, ... } or { _unauthorized: true } */
 export async function createPlaylist(token, userId, name, description = '') {
-  return fetchWebApi(token, `v1/users/${userId}/playlists`, 'POST', {
-    name,
-    description: description || 'Created with Jammming',
-    public: false, // private playlist; some dev-mode apps get 403 for public
-  })
+  const endpoint = `v1/users/${userId}/playlists`
+  const requestUrl = `https://api.spotify.com/${endpoint}`
+  console.log('Create playlist request URL:', requestUrl)
+  const body = { name, description: description || 'Created with Jammming', public: false }
+  return fetchWebApi(token, endpoint, 'POST', body)
 }
 
 /** Add tracks to playlist. uris = ['spotify:track:id', ...] */
