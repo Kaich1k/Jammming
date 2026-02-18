@@ -155,9 +155,9 @@ export async function getMe(token) {
   return fetchWebApi(token, 'v1/me', 'GET')
 }
 
-/** Create playlist. Returns { id, ... } or { _unauthorized: true } */
-export async function createPlaylist(token, userId, name, description = '') {
-  const endpoint = `v1/users/${userId}/playlists`
+/** Create playlist for the current user. Returns { id, ... } or { _unauthorized: true } */
+export async function createPlaylist(token, _userId, name, description = '') {
+  const endpoint = 'v1/me/playlists'
   const requestUrl = `https://api.spotify.com/${endpoint}`
   console.log('Create playlist request URL:', requestUrl)
   const body = { name, description: description || 'Created with Jammming', public: false }
@@ -167,5 +167,5 @@ export async function createPlaylist(token, userId, name, description = '') {
 /** Add tracks to playlist. uris = ['spotify:track:id', ...] */
 export async function addTracksToPlaylist(token, playlistId, uris) {
   if (!uris.length) return null
-  return fetchWebApi(token, `v1/playlists/${playlistId}/tracks`, 'POST', { uris })
+  return fetchWebApi(token, `v1/playlists/${playlistId}/items`, 'POST', { uris })
 }
